@@ -5,7 +5,11 @@ const API_2 = "https://5kxkhs7v2h.execute-api.ap-south-1.amazonaws.com/dev/qsemb
 
 function makeAPIcall(URL) {
   fetch(URL, {
-    method: "GET"
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
   })
     .then((response) => response.json())
     .then((json) => {
