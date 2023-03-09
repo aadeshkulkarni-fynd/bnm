@@ -8,14 +8,33 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="navbar">
-        <a href="#">B&M</a>
-        <div>
-          <a href="#" onclick="showViewer()">Viewer</a>
-          <a href="#" onclick="showAdmin()">Admin</a>
+    <div class="overlay">
+      <div class="modal">
+        <h2>B&M</h2>
+        <input id="keyCode" type="text" placeholder="Enter Keycode" />
+        <div class="toggle-container">
+            <label for="toggle-checkboxa">View</label>
+            <div class="toggle-button">
+              <input type="checkbox" id="toggle-checkbox" />
+              <label for="toggle-checkbox"></label>
+            </div>
+            <label for="toggle-checkboxc">Admin</label>
         </div>
+        
+        <button id="btnSubmit">Submit</button>
       </div>
-    <iframe id="ifDashboard" src=""></iframe>
+    </div>
+    <div class="container">
+        <div class="navbar">
+            <a href="#">B&M</a>
+            <div>
+              <a href="#" onclick="showViewer()">Reader</a>
+              <a href="#" onclick="showAdmin()">Author</a>
+            </div>
+          </div>
+          <iframe id="ifDashboard" src=""></iframe>
+    </div>
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
   </body>
