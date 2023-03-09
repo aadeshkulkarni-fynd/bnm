@@ -21,3 +21,7 @@ function showAdmin() {
   console.log("Called 2");
   makeAPIcall(API_2);
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+    showViewer();
+});
