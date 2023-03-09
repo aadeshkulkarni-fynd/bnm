@@ -8,7 +8,12 @@ function makeAPIcall(URL) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
+      "Sec-Fetch-Dest": "document",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-Site": "none",
+      "Sec-Fetch-User": "?1",
+      "Referer": "",
+      "Origin": ""
     },
   })
     .then((response) => response.json())
