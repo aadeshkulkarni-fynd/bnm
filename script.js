@@ -8,7 +8,8 @@ function makeAPIcall(URL) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      mode: "no-cors",
     },
   })
     .then((response) => response.json())
