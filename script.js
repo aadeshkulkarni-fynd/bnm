@@ -7,7 +7,7 @@ axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 
 function showViewer(key) {
   console.log("Viewer")
-  axios.get(`${URL}?key=${key}&mode=getAuthor`).then((response) => {
+  axios.get(`${URL}?key=${key}&mode=getReader`).then((response) => {
     console.log(response);
     ifDashboard.src = response.data.DashboardEmbedUrl;
     document.getElementsByClassName("overlay")[0].style.display='none';
