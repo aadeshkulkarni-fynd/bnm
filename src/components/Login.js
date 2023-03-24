@@ -30,7 +30,7 @@ export const Login = ({ setActivePage }) => {
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
         <div className="form-control">
-          <button onClick={SignInHandler} disabled={username == "" || password == ""}>
+          <button onClick={SignInHandler} disabled={username === "" || password === ""}>
             Sign in to BnM
           </button>
         </div>

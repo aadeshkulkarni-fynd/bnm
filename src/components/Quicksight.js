@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export const Quicksight = ({ setActivePage }) => {
-  const [url, setUrl] = useState(localStorage.getItem("qs"));
+  const [url] = useState(localStorage.getItem("qs"));
   useEffect(() => {
     console.log("Iframe");
     document.getElementById("ifDashboard").setAttribute("src", url);

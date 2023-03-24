@@ -28,11 +28,11 @@ export const List = ({ setActivePage }) => {
           <ul>
             {Assets?.Analysis?.map((record) => {
               return (
-                <li onClick={() => goTo("analysis", record.AnalysisId)}>
+                <li key={record.AnalysisId} onClick={() => goTo("analysis", record.AnalysisId)}>
                   {" "}
                   <span>{record.Name}</span>
                   <span className="record-id">{record.AnalysisId}</span>
-                  <img className="assets" src="./right-arrow.svg" />
+                  <img alt="Right Arrow" className="assets" src="./right-arrow.svg" />
                 </li>
               );
             })}
@@ -43,10 +43,10 @@ export const List = ({ setActivePage }) => {
           <ul>
             {Assets?.Dashboards?.map((record) => {
               return (
-                <li onClick={() => goTo("dashboard", record.DashboardId)}>
+                <li key={record.DashboardId} onClick={() => goTo("dashboard", record.DashboardId)}>
                   <span>{record.Name}</span>
                   <span className="record-id">{record.DashboardId}</span>
-                  <img className="assets" src="./right-arrow.svg" />
+                  <img alt="Right Arrow" className="assets" src="./right-arrow.svg" />
                 </li>
               );
             })}
