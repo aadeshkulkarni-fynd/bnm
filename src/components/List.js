@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { ListOfAssets, showVisualisation } from "../services/asset";
+import { Navbar } from "./Navbar";
 export const List = ({ setActivePage }) => {
   const [Assets, setAssets] = useState({});
   useEffect(() => {
     async function getAssets() {
       const response = await ListOfAssets();
-      console.log("List: ", response);
       setAssets(response);
     }
     getAssets();
   }, []);
 
   async function goTo(type, assetId) {
-    console.log(assetId);
     const data = await showVisualisation(type, assetId);
-    console.log("QS Response: ", data);
     if (data.EmbedUrl) {
       localStorage.setItem("qs", data.EmbedUrl);
       setActivePage("quicksight");
@@ -22,9 +20,10 @@ export const List = ({ setActivePage }) => {
   }
   return (
     <div className="container">
+      <Navbar setActivePage={setActivePage} isQS={false} />
       <div className="list-container">
         <div>
-          {Assets.Analysis && <h4 className="list-title">Asset: Analysis</h4>}
+          {Assets?.Analysis && <h4 className="list-title">Asset: Analysis</h4>}
           <ul>
             {Assets?.Analysis?.map((record) => {
               return (
@@ -39,7 +38,7 @@ export const List = ({ setActivePage }) => {
           </ul>
         </div>
         <div>
-        {Assets.Dashboards && <h4 className="list-title">Asset: Dashboard</h4>}
+        {Assets?.Dashboards && <h4 className="list-title">Asset: Dashboard</h4>}
           <ul>
             {Assets?.Dashboards?.map((record) => {
               return (

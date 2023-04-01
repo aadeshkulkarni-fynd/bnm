@@ -1,171 +1,191 @@
-*{
+* {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
-.App, body{
-  height:100vh;
-  width:100vw;
+.App,
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
-.container{
-  width:100%;
-  height:100%;
+.container {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top:60px;
+  padding-top: 60px;
 }
 
-.login-container{
-  width:500px;
-  min-height:400px;
-  padding:2rem; 
-  border:1px solid #F0F0F0;
+.login-container {
+  width: 500px;
+  min-height: 400px;
+  padding: 2rem;
+  border: 1px solid #f0f0f0;
 }
 
 .title {
-  font-size:1.2rem;
+  font-size: 1.2rem;
   text-align: center;
   padding: 1rem;
 }
 
-.form-control{
+.form-control {
   display: flex;
   flex-direction: column;
-  padding:1rem;
+  padding: 1rem;
 }
-label{
-  font-size:0.9rem;
-  padding-bottom:1rem;
+label {
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
 }
 input {
-  width:100%;
-  padding:1rem;
-  border-radius:1rem;
-  border:1px solid #F0F0F0;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #f0f0f0;
 }
 input:focus {
   outline: none !important;
-  border:1px solid #4681f4;
-  box-shadow: 0 0 4px #719ECE;
+  border: 1px solid #4681f4;
+  box-shadow: 0 0 4px #719ece;
 }
 
 button {
-  padding:1rem 2rem;
-  border-radius:1rem;
-  border:1px solid #f0f0f0;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid #f0f0f0;
   background-color: #4681f4;
-  color:#FFF;
-  font-weight:600;
+  color: #fff;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.05rem;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
-  border:1px solid #4681f4;
-  box-shadow: 0 0 4px #719ECE;
+  border: 1px solid #4681f4;
+  box-shadow: 0 0 4px #719ece;
 }
 
-button:disabled{
+button:disabled {
   cursor: not-allowed;
-  border:0px;
-  box-shadow:0;
+  border: 0px;
+  box-shadow: 0;
   opacity: 0.8;
 }
 
-.list-container{
+.list-container {
   width: 500px;
-  border:1px solid #F0F0F0;
-  padding:1rem;
+  border: 1px solid #f0f0f0;
+  padding: 1rem;
 }
-.list-title{
+.list-title {
   text-transform: uppercase;
-  padding-bottom:0.75rem;
-  border-bottom:1px solid #F0F0F0;
-  margin:0.75rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0.75rem 0;
 }
-ul{
-  padding:1rem 0;
-  width:100%;
+ul {
+  padding: 1rem 0;
+  width: 100%;
 }
-li{
+li {
   list-style-type: none;
-  padding:1rem;
-  border:1px solid #F0F0F0;
-  width:100%;
-  margin-bottom:0.25rem;
-  border-radius:1rem;
-  display:flex;
+  padding: 1rem;
+  border: 1px solid #f0f0f0;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  border-radius: 1rem;
+  display: flex;
   flex-direction: column;
   align-items: start;
   position: relative;
 }
 img.assets {
-  position:absolute;
-  right:1rem;
-  top:1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
 
-  width:20px;
-  height:20px;
+  width: 20px;
+  height: 20px;
 }
 li:hover {
   background: #4681f4;
-  color:#FFF;
+  color: #fff;
   cursor: pointer;
 }
-.record-id{
-  font-size:0.6rem;
-  padding-top:0.5rem;
+.record-id {
+  font-size: 0.6rem;
+  padding-top: 0.5rem;
   color: #555;
 }
 
-li:hover .record-id{
-  color: #FFF;
+li:hover .record-id {
+  color: #fff;
 }
-#ifDashboard{
-  width:100%;
-  height:100%;
+#ifDashboard {
+  width: 100%;
+  height: 100%;
 }
 
-.navbar{
+.navbar {
   position: fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:60px;
-  background-color: #222;
-  color:#FFF;
+  z-index:120;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: #333;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:1rem;
+  padding: 1rem;
 }
 
-.asset-icon{
+.asset-icon {
   cursor: pointer;
-  border:1px solid #333;
+  border: 1px solid #444;
   border-radius: 0.5rem;
-  padding:0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-left:0.5rem;
 }
-.asset-icon:hover {
-  background-color: #4681f4;
-  border:1px solid #222;
-  color:#FFF;
-}
-.asset-icon img {
-  width:20px;
-  height:20px;
-  margin-right:0.25rem;
+.asset-icon:last-child {
+  margin-left: 0.5rem;
 }
 
-.navbar-icons{
+.asset-icon:hover {
+  background-color: #4681f4;
+  border: 1px solid #222;
+  color: #fff;
+}
+.asset-icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.25rem;
+}
+
+.navbar-icons {
   display: flex;
+}
+
+.qs-container{
+  position:fixed;
+  background-color: white;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading{
+  z-index:100;
 }

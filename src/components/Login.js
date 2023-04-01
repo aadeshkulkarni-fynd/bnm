@@ -7,12 +7,10 @@ export const Login = ({ setActivePage }) => {
   async function SignInHandler() {
     if (username !== "" && password !== "") {
       const response = await SignIn({ username, password });
-      console.log("Response: ", response);
       if (response.auth_token) {
         localStorage.setItem("auth", response.auth_token);
         setActivePage("list");
       } else {
-        console.log("Message: ", response?.detail);
         toast.error(response?.detail);
       }
     }
@@ -31,7 +29,7 @@ export const Login = ({ setActivePage }) => {
         </div>
         <div className="form-control">
           <button onClick={SignInHandler} disabled={username === "" || password === ""}>
-            Sign in to BnM
+            Sign in
           </button>
         </div>
       </div>
