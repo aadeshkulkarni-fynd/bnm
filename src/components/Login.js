@@ -7,8 +7,8 @@ export const Login = ({ setActivePage }) => {
   async function SignInHandler() {
     if (username !== "" && password !== "") {
       const response = await SignIn({ username, password });
-      if (response.auth_token) {
-        localStorage.setItem("auth", response.auth_token);
+      if (response.access_token) {
+        localStorage.setItem("auth", response.access_token);
         setActivePage("list");
       } else {
         toast.error(response?.detail);

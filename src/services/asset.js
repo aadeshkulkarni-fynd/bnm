@@ -1,7 +1,9 @@
+import { config } from './Endpoints';
+const { BACKEND_URL } = config;
 async function ListOfAssets() {
   try {
     const auth_token = localStorage.getItem("auth");
-    const response = await fetch("https://2o8bcyoaua.execute-api.ap-south-1.amazonaws.com/dev/api/v0.1/assets/", {
+    const response = await fetch(`${BACKEND_URL}/assets/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
@@ -18,7 +20,7 @@ async function ListOfAssets() {
 async function showVisualisation(type, assetId) {
   try {
     const auth_token = localStorage.getItem("auth");
-    const response = await fetch(`https://2o8bcyoaua.execute-api.ap-south-1.amazonaws.com/dev/api/v0.1/assets/${type}/${assetId}`, {
+    const response = await fetch(`${BACKEND_URL}/assets/${type}/${assetId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
